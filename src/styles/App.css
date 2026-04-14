@@ -1,0 +1,10 @@
+/* Components */
+@import './components/Navbar.css';
+@import './components/Hero.css';
+@import './components/Stats.css';
+@import './components/HowItWorks.css';
+@import './components/Footer.css';
+
+/* Pages */
+@import './pages/Auth.css';
+@import './pages/Search.css';

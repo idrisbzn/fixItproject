@@ -1,0 +1,251 @@
+.profile-page {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.profile-header {
+    text-align: center;
+}
+
+.avatar-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.avatar-wrapper {
+    position: relative;
+    width: 120px;
+    height: 120px;
+}
+
+.avatar-wrapper img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--border);
+}
+
+.btn-edit-avatar {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.profile-name {
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.profile-meta {
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.member-since {
+    font-size: 12px;
+    color: var(--dim);
+}
+
+/* Profile Sections */
+.profile-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.section-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--muted);
+    letter-spacing: 1px;
+}
+
+.profile-card {
+    background: rgba(10, 14, 26, 0.4);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 32px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.form-group input,
+.form-group select {
+    background: var(--auth-input-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 16px;
+    color: var(--text);
+    font-size: 15px;
+    transition: all 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--cyan);
+    outline: none;
+}
+
+.btn-save {
+    width: 100%;
+    background: var(--cyan);
+    color: #000;
+    font-weight: 700;
+    padding: 14px;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+/* Security Section */
+.card-subtitle {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+.form-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-update-password {
+    background: var(--cyan);
+    color: #000;
+    font-weight: 700;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+/* Danger Zone */
+.danger-card {
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    background: rgba(239, 68, 68, 0.05);
+    border-radius: 20px;
+    padding: 32px;
+}
+
+.danger-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--red);
+    margin-bottom: 12px;
+}
+
+.danger-desc {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 24px;
+}
+
+.btn-delete-account {
+    background: transparent;
+    border: 1px solid var(--red);
+    color: var(--red);
+    font-weight: 600;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.btn-delete-account:hover {
+    background: var(--red);
+    color: #fff;
+}
+
+@media (max-width: 600px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card-footer {
+        justify-content: stretch;
+    }
+
+    .btn-update-password {
+        width: 100%;
+    }
+}
+
+.profile-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+    padding-bottom: 40px;
+}
+
+.btn-logout {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(30, 41, 59, 0.4);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-weight: 600;
+    padding: 12px 32px;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-logout i {
+    color: var(--cyan);
+}
+
+.btn-logout:hover {
+    background: rgba(30, 41, 59, 0.6);
+    border-color: var(--cyan);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 600px) {
+    .btn-logout {
+        width: 100%;
+    }
+}

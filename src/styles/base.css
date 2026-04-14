@@ -1,0 +1,40 @@
+:root {
+    /* Colors */
+    --bg: #0a0e1a;
+    --surface: #111827;
+    --card: #1a2235;
+    --border: #1e2d45;
+    --text: #e2e8f0;
+    --muted: #64748b;
+    --dim: #334155;
+    --cyan: #06b6d4;
+    --blue: #2563eb;
+    --green: #10b981;
+    --amber: #f59e0b;
+    --purple: #8b5cf6;
+    --red: #ef4444;
+
+    /* Auth/Customer Specific */
+    --auth-bg: #080C14;
+    --auth-card: #0F1624;
+    --auth-border: #334155;
+    --auth-input-bg: #1E293B;
+    --auth-text: #E2E8F0;
+    --auth-muted: #64748B;
+    --auth-cyan: #06B6D4;
+
+    /* Typography */
+    --font-display: 'Syne', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-inter: 'Inter', sans-serif;
+
+    /* Border Radius */
+    --radius-card: 16px;
+    --radius-input: 10px;
+    --radius-btn: 10px;
+
+    /* Spacing */
+    --page-max-width: 1200px;
+    --section-gap: 40px;
+}

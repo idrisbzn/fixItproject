@@ -1,0 +1,223 @@
+/* ========== Hero Section ========== */
+.hero-section {
+    position: relative;
+    min-height: calc(100vh - 64px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 24px 60px;
+    overflow: hidden;
+}
+
+.hero-canvas-wrapper {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.hero-canvas-wrapper canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: radial-gradient(ellipse at center, transparent 0%, var(--bg) 75%);
+    pointer-events: none;
+}
+
+.hero-panel {
+    position: relative;
+    z-index: 2;
+    background: rgba(10, 14, 26, 0.18);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 48px 48px 40px;
+    max-width: 780px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.hero-content {
+    position: relative;
+    text-align: center;
+    max-width: 720px;
+}
+
+.hero-title {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 56px;
+    line-height: 1.1;
+    color: var(--text);
+    margin-bottom: 8px;
+}
+
+.hero-title-accent {
+    color: var(--cyan);
+    display: block;
+}
+
+.hero-subtitle {
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: 17px;
+    color: var(--muted);
+    margin-top: 16px;
+    margin-bottom: 40px;
+}
+
+/* Search Bar */
+.hero-search {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    gap: 12px;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    max-width: 720px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.hero-select {
+    appearance: none;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--muted);
+    font-family: var(--font-body);
+    font-size: 14px;
+    padding: 0 38px 0 16px;
+    height: 46px;
+    min-width: 160px;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%2364748b' viewBox='0 0 16 16'%3E%3Cpath d='M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    transition: border-color 0.2s;
+    display: flex;
+    align-items: center;
+}
+
+.hero-select:hover,
+.hero-select:focus {
+    border-color: var(--cyan);
+}
+
+.hero-toggle-group {
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    height: 46px;
+}
+
+.hero-toggle-btn {
+    padding: 0 20px;
+    background: var(--card);
+    color: var(--muted);
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-toggle-btn.active {
+    background: var(--cyan);
+    color: var(--bg);
+    font-weight: 600;
+}
+
+.hero-toggle-btn:not(.active):hover {
+    background: var(--border);
+}
+
+.btn-find-shops {
+    padding: 0 32px;
+    border-radius: 10px;
+    background: var(--cyan);
+    color: var(--bg);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-find-shops:hover {
+    background: var(--cyan);
+    color: var(--bg);
+    box-shadow: 0 0 24px rgba(6, 182, 212, 0.4);
+    transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+    .hero-panel {
+        padding: 32px 20px 28px;
+        border-radius: 16px;
+    }
+
+    .hero-title {
+        font-size: 36px;
+    }
+
+    .hero-subtitle {
+        font-size: 15px;
+    }
+
+    .hero-search {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .hero-select {
+        width: 100%;
+    }
+
+    .hero-toggle-group {
+        width: 100%;
+    }
+
+    .hero-toggle-btn {
+        flex: 1;
+    }
+
+    .btn-find-shops {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-section {
+        padding: 60px 16px 40px;
+    }
+
+    .hero-title {
+        font-size: 30px;
+    }
+}

@@ -1,0 +1,415 @@
+.devices-page {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.devices-header {
+    margin-bottom: 8px;
+}
+
+.devices-title {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.devices-subtitle {
+    color: var(--muted);
+    font-size: 15px;
+}
+
+/* Tabs */
+.tabs-container {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.tab-btn {
+    padding: 10px 24px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    background: rgba(30, 41, 59, 0.3);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    transition: all 0.2s ease;
+}
+
+.tab-btn:hover {
+    background: rgba(30, 41, 59, 0.5);
+    color: var(--text);
+}
+
+.tab-btn.active {
+    background: var(--green);
+    color: #000;
+    border-color: var(--green);
+}
+
+/* Repair Groups */
+.repair-group {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 48px;
+}
+
+.group-title {
+    font-size: 18px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.group-title::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+.group-title.pending::before {
+    background: var(--amber);
+    box-shadow: 0 0 10px var(--amber);
+}
+
+.group-title.active::before {
+    background: var(--cyan);
+    box-shadow: 0 0 10px var(--cyan);
+}
+
+.group-title.completed::before {
+    background: var(--green);
+    box-shadow: 0 0 10px var(--green);
+}
+
+.group-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Repair Cards */
+.repair-card {
+    background: rgba(10, 14, 26, 0.4);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 32px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.repair-card.pending::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--amber);
+}
+
+.repair-card.active::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--cyan);
+}
+
+.repair-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+}
+
+.device-info h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.status-badge {
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+.status-badge.pending {
+    background: rgba(245, 158, 11, 0.1);
+    color: var(--amber);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.status-badge.active {
+    background: rgba(6, 182, 212, 0.1);
+    color: var(--cyan);
+    border: 1px solid rgba(6, 182, 212, 0.2);
+}
+
+.status-badge.ready {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--green);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.time-ago,
+.order-id {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.repair-note {
+    font-size: 15px;
+    color: var(--muted);
+    font-style: italic;
+    margin-bottom: 32px;
+}
+
+.repair-actions {
+    display: flex;
+    gap: 16px;
+}
+
+.btn-cancel {
+    padding: 10px 24px;
+    border-radius: 10px;
+    border: 1px solid var(--red);
+    color: var(--red);
+    background: transparent;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.btn-details {
+    padding: 10px 24px;
+    border-radius: 10px;
+    border: 1px solid var(--cyan);
+    color: var(--cyan);
+    background: transparent;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* Stepper */
+.repair-stepper {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 32px;
+    padding-top: 20px;
+}
+
+.stepper-line {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--border);
+    z-index: 0;
+}
+
+.stepper-line-fill {
+    height: 100%;
+    background: var(--cyan);
+    box-shadow: 0 0 10px var(--cyan);
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    z-index: 1;
+    width: 80px;
+}
+
+.step-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: var(--muted);
+    transition: all 0.3s ease;
+}
+
+.step.completed .step-icon {
+    background: var(--cyan);
+    border-color: var(--cyan);
+    color: #000;
+    box-shadow: 0 0 15px rgba(6, 182, 212, 0.3);
+}
+
+.step.current .step-icon {
+    transform: scale(1.2);
+    border-color: var(--cyan);
+    color: var(--cyan);
+    background: var(--bg);
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.4);
+}
+
+.step span {
+    font-size: 10px;
+    font-weight: 800;
+    color: var(--muted);
+    text-align: center;
+}
+
+.step.completed span {
+    color: var(--cyan);
+}
+
+/* Tech Note */
+.tech-note-box {
+    background: rgba(30, 41, 59, 0.3);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.tech-note-box i {
+    font-size: 20px;
+    color: var(--blue);
+    margin-top: 4px;
+}
+
+.tech-note-content label {
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--blue);
+    letter-spacing: 0.5px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.tech-note-content p {
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* Completed Simple Card */
+.repair-card.completed-simple {
+    background: rgba(30, 41, 59, 0.3);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.device-icon-small {
+    width: 48px;
+    height: 48px;
+    background: var(--auth-input-bg);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: var(--muted);
+}
+
+.device-details {
+    flex: 1;
+}
+
+.device-details h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.status-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.status-tag {
+    font-size: 10px;
+    font-weight: 800;
+    color: var(--green);
+    background: rgba(16, 185, 129, 0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.finish-date {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.card-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-review {
+    background: var(--amber);
+    color: #000;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+.btn-details-small {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-weight: 600;
+    font-size: 13px;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .repair-stepper {
+        overflow-x: auto;
+        padding-bottom: 16px;
+        justify-content: flex-start;
+        gap: 20px;
+    }
+
+    .step {
+        flex-shrink: 0;
+    }
+
+    .stepper-line {
+        width: 500px;
+    }
+
+    .repair-card.completed-simple {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .card-actions {
+        width: 100%;
+    }
+
+    .card-actions button {
+        flex: 1;
+    }
+}

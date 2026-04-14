@@ -1,0 +1,31 @@
+.customer-layout {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: var(--bg);
+    color: var(--text);
+}
+
+.customer-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.customer-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, transparent 0%, var(--bg) 90%);
+}
+
+.customer-main {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    width: 100%;
+    max-width: var(--page-max-width);
+    margin: 0 auto;
+    padding: 40px 24px;
+}
