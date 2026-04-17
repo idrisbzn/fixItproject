@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logoSrc from '../../assets/logo.svg';
-import GridAnimation from '../../components/visitor/GridAnimation';
+import GridAnimation from '../../components/common/gridAnimation/GridAnimation';
 
 const Register = () => {
     const [userType, setUserType] = useState('customer'); // 'customer' or 'shop'

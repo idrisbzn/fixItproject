@@ -1,9 +1,9 @@
 /* Components */
-@import './components/Navbar.css';
-@import './components/Hero.css';
-@import './components/Stats.css';
-@import './components/HowItWorks.css';
-@import './components/Footer.css';
+@import '../components/visitor/NavBar/Navbar.css';
+@import '../components/visitor/HeroSection/Hero.css';
+@import '../components/visitor/StatsSection/Stats.css';
+@import '../components/visitor/HowItWorks/HowItWorks.css';
+@import '../components/visitor/footer/Footer.css';
 
 /* Pages */
 @import './pages/Auth.css';

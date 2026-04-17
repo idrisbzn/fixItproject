@@ -1,4 +1,4 @@
-import logoSrc from '../../assets/logo.svg';
+import logoSrc from '../../../assets/logo.svg';
 
 export default function Footer() {
     return (
@@ -6,7 +6,7 @@ export default function Footer() {
             <div className="footer-inner">
                 <div className="footer-grid">
                     {/* Brand */}
-                    <div>
+                    <div className="footer-brand">
                         <div className="footer-brand-logo">
                             <div className="footer-brand-logo-circle">
                                 <img src={logoSrc} alt="FixIt" />

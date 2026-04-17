@@ -8,10 +8,9 @@ const CustomerNavbar = () => {
         <nav className="customer-navbar">
             <div className="customer-navbar-inner">
                 <Link to="/dashboard" className="customer-navbar-logo">
-                    <div className="customer-navbar-logo-circle">
+                    <div className="customer-navbar-logo">
                         <img src={logoSrc} alt="FixIt" />
                     </div>
-                    <span className="customer-navbar-wordmark">FixIt</span>
                 </Link>
 
                 <div className="customer-navbar-links">

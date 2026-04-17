@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import GridAnimation from './GridAnimation';
+import GridAnimation from '../../common/gridAnimation/GridAnimation';
 
 export default function HeroSection() {
     const [deviceType, setDeviceType] = useState('phone');

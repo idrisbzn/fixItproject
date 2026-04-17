@@ -26,8 +26,8 @@
 }
 
 .footer-brand-logo-circle {
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     border: 2px solid rgba(6, 182, 212, 0.3);
     display: flex;
@@ -37,8 +37,8 @@
 }
 
 .footer-brand-logo-circle img {
-    width: 20px;
-    height: 20px;
+    width: 40px;
+    height: 40px;
     object-fit: contain;
 }
 
@@ -118,5 +118,18 @@
     .footer-grid {
         grid-template-columns: 1fr;
         gap: 32px;
+        text-align: center;
+    }
+
+    .footer-brand {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .footer-contact-item {
+        justify-content: center;
     }
 }
