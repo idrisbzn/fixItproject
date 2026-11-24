@@ -1,0 +1,252 @@
+.shopCard {
+    background: rgba(30, 41, 59, 0.3);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.shopCard:hover {
+    transform: translateY(-4px);
+    border-color: var(--dim);
+}
+
+.shopCardMain {
+    padding: 24px;
+    flex: 1;
+}
+
+.shopHeader {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.shopAvatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--surface);
+}
+
+.shopAvatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.shopInfo {
+    flex: 1;
+}
+
+.shopNameRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 4px;
+}
+
+.shopNameRow h3 {
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.statusBadge {
+    font-size: 9px;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+}
+
+.statusBadge.open {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--green);
+}
+
+.statusBadge.closed {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--red);
+}
+
+.shopMeta {
+    display: flex;
+    gap: 12px;
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.rating i {
+    color: var(--amber);
+}
+
+.shopTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.tag {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--muted);
+    background: rgba(100, 116, 139, 0.1);
+    padding: 4px 10px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.shopNoteBox {
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    position: relative;
+    transition: all 0.2s;
+}
+
+.noteEditor textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: var(--text);
+    font-size: 13px;
+    resize: none;
+    min-height: 60px;
+    outline: none;
+    font-family: inherit;
+    line-height: 1.5;
+}
+
+.noteActions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.noteActions button {
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+}
+
+.btnSaveNote {
+    background: var(--cyan);
+    color: var(--bg);
+}
+
+.btnCancelNote {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--muted);
+}
+
+.noteView {
+    cursor: pointer;
+    position: relative;
+}
+
+.shopQuote {
+    font-size: 13px;
+    color: var(--text);
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.shopNotePlaceholder {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.noteHoverActions {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    display: flex;
+    gap: 8px;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.noteView:hover .noteHoverActions {
+    opacity: 1;
+}
+
+.noteHoverActions i {
+    width: 28px;
+    height: 28px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: var(--muted);
+    transition: all 0.2s;
+}
+
+.noteHoverActions i:hover {
+    color: var(--text);
+    border-color: var(--dim);
+    transform: scale(1.1);
+}
+
+.noteHoverActions i.fa-trash-can:hover {
+    color: var(--red);
+    border-color: rgba(239, 68, 68, 0.3);
+}
+
+
+.shopCardActions {
+    display: flex;
+    border-top: 1px solid var(--border);
+}
+
+.shopCardActions button {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 14px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    cursor: pointer;
+    transition: all 0.2s;
+    border-right: 1px solid var(--border);
+}
+
+.shopCardActions button:last-child {
+    border-right: none;
+    flex: 0 0 50px;
+    color: var(--red);
+}
+
+.shopCardActions .btnSendRequest {
+    color: var(--cyan);
+}
+
+.shopCardActions button:hover {
+    background: rgba(30, 41, 59, 0.6);
+}
+
+@media (max-width: 600px) {
+    .shopCardActions {
+        flex-direction: column;
+    }
+    
+    .shopCardActions button {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+    }
+}

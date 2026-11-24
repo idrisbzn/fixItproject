@@ -1,0 +1,104 @@
+.repairCard {
+    background: rgba(30, 41, 59, 0.3);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 20px;
+}
+
+.pending {
+    border-left: 4px solid var(--amber);
+}
+
+.repairCardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.deviceInfo h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.shopName {
+    font-size: 13px;
+    color: var(--cyan);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.statusBadge {
+    font-size: 10px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+}
+
+.statusBadge.pending {
+    background: rgba(245, 158, 11, 0.1);
+    color: var(--amber);
+}
+
+.timeAgo {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.repairNote {
+    font-size: 14px;
+    color: var(--text);
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.repairActions {
+    display: flex;
+    gap: 12px;
+}
+
+.btnCancel {
+    background: transparent;
+    border: 1px solid var(--red);
+    color: var(--red);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.btnCancel:hover {
+    background-color: var(--red);
+    color: var(--text);
+    transform: translateY(-2px);
+}
+
+.btnDetails {
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .repairActions {
+        flex-direction: column;
+    }
+
+    .repairActions button {
+        width: 100%;
+    }
+}

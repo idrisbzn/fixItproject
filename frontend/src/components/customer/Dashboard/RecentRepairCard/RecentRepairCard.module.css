@@ -1,0 +1,120 @@
+.repairCardSimple {
+    background: rgba(30, 41, 59, 0.3);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto auto;
+    gap: 16px 24px;
+    align-items: center;
+}
+
+.repairIcon {
+    grid-row: span 2;
+    width: 56px;
+    height: 56px;
+    background: var(--surface);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: var(--muted);
+}
+
+.deviceName {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.repairMeta {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.repairStatusBadge {
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+}
+
+.repairStatusBadge.inrepair {
+    background: rgba(6, 182, 212, 0.1);
+    color: var(--cyan);
+    border: 1px solid rgba(6, 182, 212, 0.2);
+}
+
+.repairProgressBar {
+    grid-column: span 2;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding-top: 12px;
+}
+
+.progressLine {
+    position: absolute;
+    top: 19px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--border);
+    z-index: 0;
+}
+
+.progressLineFill {
+    height: 100%;
+    background: var(--cyan);
+    box-shadow: 0 0 10px var(--cyan);
+}
+
+.progressStep {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    z-index: 1;
+}
+
+.stepDot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--border);
+    border: 3px solid var(--bg);
+    transition: all 0.3s ease;
+}
+
+.progressStep.active .stepDot {
+    background: var(--cyan);
+    box-shadow: 0 0 8px var(--cyan);
+}
+
+.progressStep.current .stepDot {
+    transform: scale(1.3);
+}
+
+.progressStep span {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--muted);
+}
+
+.progressStep.active span {
+    color: var(--cyan);
+}
+
+@media (max-width: 768px) {
+    .repairCardSimple {
+        grid-template-columns: auto 1fr;
+    }
+
+    .repairProgressBar {
+        grid-column: span 2;
+        overflow-x: auto;
+        padding-bottom: 8px;
+    }
+}

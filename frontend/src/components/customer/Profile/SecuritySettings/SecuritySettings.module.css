@@ -1,0 +1,129 @@
+.profileSection {
+    margin-bottom: 24px;
+}
+
+.settingsCard {
+    background: rgba(30, 41, 59, 0.3);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 32px;
+}
+
+.passwordSettings {
+    border-left: 4px solid var(--purple);
+}
+
+.cardHeader {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.cardHeader .icon {
+    color: var(--purple);
+    font-size: 20px;
+}
+
+.cardHeader h3 {
+    font-size: 18px;
+    color: var(--text);
+    font-weight: 600;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.formGroup label {
+    font-size: 10px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.formGroup input {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 40px 14px 16px;
+    color: var(--text);
+    font-size: 14px;
+    transition: border-color 0.2s;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.formGroup input:focus {
+    border-color: var(--cyan);
+    outline: none;
+}
+
+.formGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cardFooter {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 24px;
+}
+
+.updateBtn {
+    background: rgba(6, 182, 212, 0.1);
+    border: 1px solid var(--cyan);
+    color: var(--cyan);
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.updateBtn:hover {
+    background: var(--cyan);
+    color: var(--bg);
+}
+
+.errorMsg {
+    margin-top: 12px;
+    font-size: 13px;
+    color: var(--red);
+}
+
+.successMsg {
+    margin-top: 12px;
+    font-size: 13px;
+    color: var(--green);
+}
+
+.passwordInputWrapper {
+    position: relative;
+    width: 100%;
+}
+
+.passwordToggle {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    color: var(--muted);
+    font-size: 16px;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+}
+
+.passwordToggle:hover {
+    color: var(--text);
+}

@@ -1,0 +1,223 @@
+.deleteAccountPage {
+    min-height: calc(100vh - 72px);
+    background-color: var(--bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 24px;
+    font-family: var(--font-body);
+}
+
+.breadcrumb {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 24px;
+}
+
+.backLink {
+    color: var(--muted);
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.2s;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-family: inherit;
+}
+
+.backLink:hover {
+    color: var(--text);
+}
+
+.deleteCard {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 48px;
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.iconContainer {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 24px;
+}
+
+.title {
+    color: var(--red);
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: var(--muted);
+    font-size: 15px;
+    margin-bottom: 32px;
+}
+
+.warningBox {
+    background: rgba(20, 26, 40, 0.5);
+    border: 1px solid rgba(239, 68, 68, 0.1);
+    border-radius: 12px;
+    padding: 24px;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.warningTitle {
+    color: var(--red);
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.warningList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.warningList li {
+    color: var(--muted);
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.warningList li::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--red);
+}
+
+.form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.formLabel {
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 16px;
+    margin-bottom: 8px;
+    width: 100%;
+}
+
+.inputGroup {
+    position: relative;
+    width: 100%;
+}
+
+.inputGroup input {
+    width: 100%;
+    background: rgba(10, 14, 26, 0.6);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+    color: var(--text);
+    font-size: 15px;
+    transition: border-color 0.2s;
+}
+
+.inputGroup input:focus {
+    outline: none;
+    border-color: var(--red);
+}
+
+.eyeBtn {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--muted);
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.eyeBtn:hover {
+    color: var(--text);
+}
+
+.actionButtons {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 24px;
+    width: 100%;
+}
+
+.confirmBtn {
+    background: var(--red);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 16px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.confirmBtn:hover {
+    background: #dc2626; /* darker red */
+    box-shadow: 0 0 16px rgba(239, 68, 68, 0.3);
+}
+
+.cancelBtn {
+    background: transparent;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.cancelBtn:hover {
+    background: var(--surface);
+    color: var(--text);
+}
+
+.footer {
+    margin-top: auto;
+    color: var(--muted);
+    font-size: 12px;
+    text-align: center;
+    padding-top: 40px;
+}
+
+@media (max-width: 600px) {
+    .deleteCard {
+        padding: 32px 24px;
+    }
+}

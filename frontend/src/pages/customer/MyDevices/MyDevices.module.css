@@ -1,0 +1,546 @@
+.devicesPage {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.devicesHeader {
+    margin-bottom: 8px;
+}
+
+.devicesTitle {
+    font-size: 32px;
+    font-weight: 800;
+}
+
+.headerTitleRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.btnMyReviews {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(245, 158, 11, 0.1);
+    color: var(--amber);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.btnMyReviews:hover {
+    background: rgba(245, 158, 11, 0.2);
+    transform: translateY(-2px);
+}
+
+.devicesSubtitle {
+    color: var(--muted);
+    font-size: 15px;
+}
+
+/* Tabs */
+.tabsContainer {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.tabBtn {
+    padding: 10px 24px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    background: rgba(30, 41, 59, 0.3);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    transition: all 0.2s ease;
+}
+
+.tabBtn:hover {
+    background: rgba(30, 41, 59, 0.5);
+    color: var(--text);
+}
+
+.tabBtn.active {
+    background: var(--green);
+    color: var(--bg);
+    border-color: var(--green);
+}
+
+/* Repair Groups */
+.repairGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 48px;
+}
+
+.groupTitle {
+    font-size: 18px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.groupTitle::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+.groupTitle.pending::before {
+    background: var(--amber);
+    box-shadow: 0 0 10px var(--amber);
+}
+
+.groupTitle.active::before {
+    background: var(--cyan);
+    box-shadow: 0 0 10px var(--cyan);
+}
+
+.groupTitle.completed::before {
+    background: var(--green);
+    box-shadow: 0 0 10px var(--green);
+}
+
+.groupHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Repair Cards */
+.repairCard {
+    background: rgba(10, 14, 26, 0.4);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 32px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.repairCard.pending::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--amber);
+}
+
+.repairCard.active::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--cyan);
+}
+
+.repairCardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+}
+
+.deviceInfo h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.statusBadge {
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+.statusBadge.pending {
+    background: rgba(245, 158, 11, 0.1);
+    color: var(--amber);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.statusBadge.active {
+    background: rgba(6, 182, 212, 0.1);
+    color: var(--cyan);
+    border: 1px solid rgba(6, 182, 212, 0.2);
+}
+
+.statusBadge.ready {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--green);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.timeAgo,
+.orderId {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.repairNote {
+    font-size: 15px;
+    color: var(--muted);
+    font-style: italic;
+    margin-bottom: 32px;
+}
+
+.repairActions {
+    display: flex;
+    gap: 16px;
+}
+
+.btnCancel {
+    padding: 10px 24px;
+    border-radius: 10px;
+    border: 1px solid var(--red);
+    color: var(--red);
+    background: transparent;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.btnDetails {
+    padding: 10px 24px;
+    border-radius: 10px;
+    border: 1px solid var(--cyan);
+    color: var(--cyan);
+    background: transparent;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* Stepper */
+.repairStepper {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 32px;
+    padding-top: 20px;
+}
+
+.stepperLine {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--border);
+    z-index: 0;
+}
+
+.stepperLineFill {
+    height: 100%;
+    background: var(--cyan);
+    box-shadow: 0 0 10px var(--cyan);
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    z-index: 1;
+    width: 80px;
+}
+
+.stepIcon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: var(--muted);
+    transition: all 0.3s ease;
+}
+
+.step.completed .stepIcon {
+    background: var(--cyan);
+    border-color: var(--cyan);
+    color: var(--bg);
+    box-shadow: 0 0 15px rgba(6, 182, 212, 0.3);
+}
+
+.step.current .stepIcon {
+    transform: scale(1.2);
+    border-color: var(--cyan);
+    color: var(--cyan);
+    background: var(--bg);
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.4);
+}
+
+.step span {
+    font-size: 10px;
+    font-weight: 800;
+    color: var(--muted);
+    text-align: center;
+}
+
+.step.completed span {
+    color: var(--cyan);
+}
+
+/* Tech Note */
+.techNoteBox {
+    background: rgba(30, 41, 59, 0.3);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.techNoteBox i {
+    font-size: 20px;
+    color: var(--blue);
+    margin-top: 4px;
+}
+
+.techNoteContent label {
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--blue);
+    letter-spacing: 0.5px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.techNoteContent p {
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* Completed Simple Card */
+.repairCard.completedSimple {
+    background: rgba(30, 41, 59, 0.3);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.deviceIconSmall {
+    width: 48px;
+    height: 48px;
+    background: var(--surface);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: var(--muted);
+}
+
+.deviceDetails {
+    flex: 1;
+}
+
+.deviceDetails h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.statusRow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.statusTag {
+    font-size: 10px;
+    font-weight: 800;
+    color: var(--green);
+    background: rgba(16, 185, 129, 0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.finishDate {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.cardActions {
+    display: flex;
+    gap: 12px;
+}
+
+.btnReview {
+    background: var(--amber);
+    color: var(--bg);
+    font-weight: 700;
+    font-size: 13px;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+.btnDetailsSmall {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-weight: 600;
+    font-size: 13px;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .repairStepper {
+        overflow-x: auto;
+        padding-bottom: 16px;
+        justify-content: flex-start;
+        gap: 20px;
+    }
+
+    .step {
+        flex-shrink: 0;
+    }
+
+    .stepperLine {
+        width: 500px;
+    }
+
+    .repairCard.completedSimple {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cardActions {
+        width: 100%;
+    }
+
+    .cardActions button {
+        flex: 1;
+    }
+}
+
+/* Modal Styles */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(10, 14, 26, 0.85);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    animation: fadeIn 0.2s ease-out;
+}
+
+.modalContent {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 40px;
+    max-width: 450px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    position: relative;
+    animation: slideUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.modalIcon {
+    width: 64px;
+    height: 64px;
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--red);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin: 0 auto 24px;
+}
+
+.modalContent h3 {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    color: var(--text);
+}
+
+.modalContent p {
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 32px;
+}
+
+.modalActions {
+    display: flex;
+    gap: 12px;
+}
+
+.modalActions button {
+    flex: 1;
+    padding: 14px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.cancelBtn {
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid var(--border);
+    color: var(--text);
+}
+
+.cancelBtn:hover {
+    background: rgba(30, 41, 59, 0.8);
+    transform: translateY(-2px);
+}
+
+.confirmBtn {
+    background: var(--red);
+    border: 1px solid var(--red);
+    color: white;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
+}
+
+.confirmBtn:hover {
+    background: #d93d3d;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}

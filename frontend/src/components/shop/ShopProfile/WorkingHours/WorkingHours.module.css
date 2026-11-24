@@ -1,0 +1,133 @@
+.workingHoursContainer {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+.sectionHeader {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.sectionHeader .icon {
+    color: var(--cyan);
+    font-size: 20px;
+}
+
+.sectionHeader h3 {
+    color: var(--text);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.hoursList {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.hourRow {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    transition: opacity 0.3s ease;
+}
+
+.hourRow.inactive {
+    opacity: 0.3;
+}
+
+.dayName {
+    width: 100px;
+    font-size: 14px;
+    color: var(--text);
+    font-weight: 500;
+}
+
+.timeInputs {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+}
+
+.timeInputs input {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 8px 12px;
+    color: var(--text);
+    font-size: 13px;
+    width: 100px;
+    text-align: center;
+}
+
+.timeInputs .to {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* Switch Styles */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 22px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--border);
+    transition: .4s;
+    border-radius: 22px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked+.slider {
+    background-color: var(--cyan);
+}
+
+input:checked+.slider:before {
+    transform: translateX(22px);
+}
+
+@media (max-width: 600px) {
+    .hourRow {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .dayName {
+        width: 100%;
+    }
+
+    .timeInputs {
+        width: calc(100% - 60px);
+    }
+}

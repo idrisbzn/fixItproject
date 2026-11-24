@@ -1,0 +1,87 @@
+.settingsPage {
+    min-height: 100vh;
+    background: var(--bg);
+    padding: 40px 24px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.settingsHeader {
+    margin-bottom: 40px;
+}
+
+.settingsHeader h1 {
+    font-size: 36px;
+    margin-bottom: 8px;
+    font-family: var(--font-display);
+}
+
+.settingsHeader p {
+    color: var(--muted);
+    font-size: 16px;
+}
+
+.settingsMain {
+    display: flex;
+    flex-direction: column;
+}
+
+.saveAllContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    z-index: 10;
+}
+
+.saveAllBtn {
+    background: var(--cyan);
+    color: var(--bg);
+    padding: 16px 40px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 8px 30px rgba(6, 182, 212, 0.4);
+    transition: all 0.3s;
+}
+
+.saveAllBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(6, 182, 212, 0.5);
+}
+
+.saveAllBtn.savedState {
+    background: var(--green);
+    box-shadow: 0 8px 30px rgba(16, 185, 129, 0.4);
+}
+
+.saveAllBtn .icon {
+    font-size: 18px;
+}
+
+.logoutBtn {
+    background: transparent;
+    color: var(--red, #ef4444);
+    border: 1px solid var(--red, #ef4444);
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 40px;
+    align-self: center;
+}
+
+.logoutBtn:hover {
+    background: var(--red, #ef4444);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
+}

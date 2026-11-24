@@ -1,0 +1,128 @@
+.dashboardSearchCard {
+    background: rgba(10, 14, 26, 0.4);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 32px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.dashboardSearchCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--cyan);
+}
+
+.cardTitle {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--cyan);
+    margin-bottom: 24px;
+}
+
+.searchGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.searchField {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.searchField label {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--muted);
+    letter-spacing: 1px;
+}
+
+.dashboardAutocomplete {
+    width: 100%;
+}
+
+.deviceToggleGroup {
+    display: flex;
+    background: rgba(30, 41, 59, 0.5);
+    padding: 4px;
+    border-radius: 10px;
+    gap: 8px;
+}
+
+.deviceToggleGroup .toggleBtn {
+    flex: 1;
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--muted);
+    background: transparent;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.deviceToggleGroup .toggleBtn.active {
+    background: var(--cyan);
+    color: var(--bg);
+}
+
+.dashboardSearchFooter {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 16px;
+}
+
+.searchErrorMessage {
+    color: var(--red);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.btnFindShops {
+    background: var(--cyan);
+    color: var(--bg);
+    font-weight: 700;
+    padding: 12px 24px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.2s ease;
+    width: fit-content;
+    border: none;
+    cursor: pointer;
+}
+
+.btnFindShops:hover {
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.4);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) {
+    .searchGrid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .searchGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .btnFindShops {
+        width: 100%;
+        justify-content: center;
+        margin-top: 20px;
+    }
+}

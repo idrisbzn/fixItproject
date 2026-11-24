@@ -1,0 +1,265 @@
+.savedShopsPage {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.savedShopsHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 8px;
+}
+
+.savedShopsTitle {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.savedShopsSubtitle {
+    color: var(--muted);
+    font-size: 15px;
+}
+
+.searchBar {
+    position: relative;
+    width: 320px;
+}
+
+.searchBar i {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.searchBar input {
+    width: 100%;
+    background: rgba(30, 41, 59, 0.3);
+    border: 1px solid var(--border);
+    border-radius: 30px;
+    padding: 12px 16px 12px 44px;
+    color: var(--text);
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.searchBar input:focus {
+    border-color: var(--cyan);
+    background: rgba(30, 41, 59, 0.5);
+    outline: none;
+}
+
+/* Shops Grid */
+.savedShopsPage .shopsGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.shopCard {
+    background: rgba(10, 14, 26, 0.4);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 24px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    transition: all 0.3s ease;
+}
+
+.shopCard:hover {
+    border-color: var(--dim);
+    transform: translateY(-4px);
+}
+
+.shopHeader {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.shopAvatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--surface);
+}
+
+.shopAvatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.shopNameRow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 4px;
+}
+
+.shopNameRow h3 {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.statusBadge {
+    font-size: 10px;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.statusBadge.open {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--green);
+}
+
+.statusBadge.closed {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--red);
+}
+
+.shopMeta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.shopMeta .rating i {
+    color: var(--amber);
+    font-size: 12px;
+}
+
+.shopTags {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.tag {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--muted);
+    background: rgba(30, 41, 59, 0.3);
+    padding: 6px 12px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tag i {
+    font-size: 14px;
+}
+
+.shopNoteBox {
+    background: rgba(10, 14, 26, 0.3);
+    border: 1px dashed var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    position: relative;
+}
+
+.shopQuote {
+    font-size: 14px;
+    color: var(--text);
+    font-style: italic;
+}
+
+.shopNotePlaceholder {
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.editIcon {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    color: var(--dim);
+    cursor: pointer;
+}
+
+.shopNoteBox:hover .editIcon {
+    color: var(--cyan);
+}
+
+.shopCardActions {
+    display: flex;
+    gap: 12px;
+    margin-top: auto;
+}
+
+.btnSendRequest {
+    flex: 1;
+    background: var(--cyan);
+    color: var(--bg);
+    font-weight: 700;
+    font-size: 14px;
+    padding: 12px;
+    border-radius: 10px;
+}
+
+.btnViewProfile {
+    flex: 1;
+    background: transparent;
+    border: 1px solid var(--cyan);
+    color: var(--cyan);
+    font-weight: 700;
+    font-size: 14px;
+    padding: 12px;
+    border-radius: 10px;
+}
+
+.btnDelete {
+    width: 44px;
+    background: transparent;
+    color: var(--muted);
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnDelete:hover {
+    color: var(--red);
+}
+
+@media (max-width: 1024px) {
+    .savedShopsPage .shopsGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .savedShopsHeader {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .searchBar {
+        width: 100%;
+    }
+
+    .shopCardActions {
+        flex-wrap: wrap;
+    }
+
+    .btnDelete {
+        width: 100%;
+        margin-top: 8px;
+    }
+}

@@ -1,0 +1,85 @@
+/* Shared card base */
+.settingsCard {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 24px;
+}
+
+.cardHeader {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.cardHeader h3 {
+    font-size: 18px;
+    color: var(--text);
+    font-weight: 600;
+}
+
+/* Delete-specific overrides */
+.deleteAccount {
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    background: rgba(239, 68, 68, 0.05);
+}
+
+.deleteAccount .cardHeader .icon {
+    color: var(--red);
+    font-size: 20px;
+}
+
+.deleteContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.deleteInfo {
+    flex: 1;
+}
+
+.deleteInfo p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.deleteBtn {
+    background: transparent;
+    border: 1px solid var(--red);
+    color: var(--red);
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.deleteBtn:hover {
+    background: var(--red);
+    color: white;
+}
+
+.warningIcon {
+    font-size: 80px;
+    color: rgba(239, 68, 68, 0.1);
+    line-height: 1;
+}
+
+@media (max-width: 600px) {
+    .deleteContent {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .warningIcon {
+        display: none;
+    }
+}

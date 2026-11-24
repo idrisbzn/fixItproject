@@ -1,0 +1,24 @@
+.shopLayout {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: var(--bg);
+    color: var(--text);
+}
+
+.shopMain {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    width: 100%;
+    max-width: var(--page-max-width);
+    margin: 0 auto;
+    padding: 40px 24px;
+}
+
+@media (max-width: 768px) {
+    .shopMain {
+        padding: 24px 16px;
+    }
+}

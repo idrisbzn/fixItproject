@@ -1,0 +1,66 @@
+.profileSection {
+    margin-bottom: 24px;
+}
+
+.settingsCard {
+    background: rgba(30, 41, 59, 0.3);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 32px;
+}
+
+.emailSettings {
+    border-left: 4px solid var(--cyan);
+}
+
+.cardHeader {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.cardHeader .icon {
+    color: var(--cyan);
+    font-size: 20px;
+}
+
+.cardHeader h3 {
+    font-size: 18px;
+    color: var(--text);
+    font-weight: 600;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.formGroup label {
+    font-size: 10px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.formGroup input {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 16px;
+    color: var(--text);
+    font-size: 14px;
+    transition: border-color 0.2s;
+}
+
+.formGroup input:focus {
+    border-color: var(--cyan);
+    outline: none;
+}
+
+.helperText {
+    margin-top: 12px;
+    font-size: 13px;
+    color: var(--muted);
+}

@@ -1,0 +1,333 @@
+.reviewHistoryPage {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.backLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--muted);
+    font-size: 14px;
+    text-decoration: none;
+    margin-bottom: -16px;
+    transition: color 0.2s;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.backLink:hover {
+    color: var(--text);
+}
+
+.pageHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 8px;
+}
+
+.pageTitle {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.pageSubtitle {
+    color: var(--muted);
+    font-size: 15px;
+}
+
+.reviewsList {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.reviewCard {
+    background: rgba(10, 14, 26, 0.4);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 24px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: all 0.3s ease;
+}
+
+.reviewCard:hover {
+    border-color: var(--dim);
+    transform: translateY(-2px);
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.shopInfo {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--surface);
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.shopDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.shopDetails h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.deviceInfo {
+    font-size: 13px;
+    color: var(--cyan);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.reviewMeta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+}
+
+.rating {
+    display: flex;
+    gap: 4px;
+}
+
+.activeStar {
+    color: var(--amber);
+    font-size: 14px;
+}
+
+.inactiveStar {
+    color: rgba(255, 255, 255, 0.1);
+    font-size: 14px;
+}
+
+.date {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.reviewText {
+    font-size: 15px;
+    color: var(--text);
+    line-height: 1.6;
+    background: rgba(30, 41, 59, 0.3);
+    padding: 16px;
+    border-radius: 12px;
+}
+
+.cardActions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btnRemove {
+    background: transparent;
+    color: var(--red);
+    border: 1px solid var(--red);
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btnRemove:hover {
+    background: var(--red);
+    transform: translateY(-2px);
+    color: var(--text);
+}
+
+.emptyState {
+    background: rgba(10, 14, 26, 0.4);
+    border: 1px dashed var(--border);
+    border-radius: 20px;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    text-align: center;
+}
+
+.emptyIcon {
+    width: 64px;
+    height: 64px;
+    background: rgba(6, 182, 212, 0.1);
+    color: var(--cyan);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.emptyState h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.emptyState p {
+    color: var(--muted);
+    font-size: 15px;
+}
+
+@media (max-width: 600px) {
+    .cardHeader {
+        flex-direction: column;
+    }
+
+    .reviewMeta {
+        align-items: flex-start;
+        width: 100%;
+        margin-top: 8px;
+    }
+
+    .btnRemove {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Modal Styles */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(10, 14, 26, 0.85);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    animation: fadeIn 0.2s ease-out;
+}
+
+.modalContent {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 40px;
+    max-width: 450px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    position: relative;
+    animation: slideUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.modalIcon {
+    width: 64px;
+    height: 64px;
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--red);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin: 0 auto 24px;
+}
+
+.modalContent h3 {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    color: var(--text);
+}
+
+.modalContent p {
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 32px;
+}
+
+.modalActions {
+    display: flex;
+    gap: 12px;
+}
+
+.modalActions button {
+    flex: 1;
+    padding: 14px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.cancelBtn {
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid var(--border);
+    color: var(--text);
+}
+
+.cancelBtn:hover {
+    background: rgba(30, 41, 59, 0.8);
+    transform: translateY(-2px);
+}
+
+.confirmBtn {
+    background: var(--red);
+    border: 1px solid var(--red);
+    color: white;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
+}
+
+.confirmBtn:hover {
+    background: #d93d3d;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}

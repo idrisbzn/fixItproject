@@ -1,0 +1,906 @@
+/* ========== Public Shop Profile Page ========== */
+.publicProfilePage {
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--text);
+}
+
+.loadingState,
+.errorState {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    gap: 16px;
+    color: var(--muted);
+    font-size: 16px;
+}
+
+.loadingState i,
+.errorState i {
+    font-size: 32px;
+    color: var(--cyan);
+}
+
+.errorState i {
+    color: var(--red, #ef4444);
+}
+
+.errorState button {
+    margin-top: 8px;
+    padding: 10px 24px;
+    background: var(--cyan);
+    color: var(--bg);
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.emptyPortfolio,
+.emptyReviews {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 48px 24px;
+    color: var(--muted);
+    background: var(--card);
+    border: 1px dashed var(--border);
+    border-radius: 16px;
+}
+
+.emptyPortfolio i,
+.emptyReviews i {
+    font-size: 32px;
+    opacity: 0.4;
+}
+
+.noData {
+    color: var(--muted);
+    font-size: 14px;
+    font-style: italic;
+}
+
+/* ========== Back Link ========== */
+.backBar {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 16px 24px 0;
+}
+
+.backLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--muted);
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.2s;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.backLink:hover {
+    color: var(--text);
+}
+
+/* ========== Header ========== */
+.profileHeader {
+    border-bottom: 1px solid var(--border);
+}
+
+.headerInner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+.headerLeft {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.shopAvatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--cyan);
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.2);
+    flex-shrink: 0;
+}
+
+.shopAvatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.shopIdentity {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.nameRow {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.nameRow h1 {
+    font-size: 28px;
+    font-weight: 800;
+    font-family: var(--font-display);
+    margin-bottom: 8px;
+}
+
+.statusBadge {
+    font-size: 10px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.statusBadge.open {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--green);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.statusBadge.closed {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--red);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.ratingRow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.stars {
+    display: flex;
+    gap: 3px;
+}
+
+.activeStar {
+    color: var(--amber);
+    font-size: 14px;
+}
+
+.inactiveStar {
+    color: rgba(255, 255, 255, 0.1);
+    font-size: 14px;
+}
+
+.ratingValue {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--text);
+}
+
+.reviewCount {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.locationText {
+    font-size: 14px;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.locationText i {
+    color: var(--cyan);
+}
+
+.headerActions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.btnSave {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+}
+
+.btnSave:hover {
+    border-color: var(--cyan);
+    color: var(--cyan);
+    transform: translateY(-2px);
+}
+
+.btnSave.saved {
+    background: rgba(6, 182, 212, 0.1);
+    color: var(--cyan);
+    border-color: var(--cyan);
+}
+
+.saveBtnWrapper {
+    position: relative;
+}
+
+.loginPrompt {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    white-space: nowrap;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    color: var(--text);
+}
+
+.loginPrompt a {
+    color: var(--cyan);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.loginPrompt a:hover {
+    text-decoration: underline;
+}
+
+.btnRequest {
+    background: var(--cyan);
+    color: var(--bg);
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: all 0.2s;
+    box-shadow: 0 4px 16px rgba(6, 182, 212, 0.3);
+    border: none;
+    cursor: pointer;
+}
+
+.btnRequest:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(6, 182, 212, 0.4);
+}
+
+/* ========== Nav Tabs ========== */
+.profileNav {
+    position: sticky;
+    top: 0;
+    margin-top: 24px;
+}
+
+.navInner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    gap: 32px;
+    overflow-x: auto;
+}
+
+.navTab {
+    background: transparent;
+    color: var(--muted);
+    padding: 16px 0;
+    font-size: 14px;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.navTab:hover {
+    color: var(--text);
+}
+
+.navTab.active {
+    color: var(--cyan);
+    border-bottom-color: var(--cyan);
+}
+
+/* ========== Content ========== */
+.profileContent {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+}
+
+.section {
+    padding-top: 16px;
+}
+
+.section+.section {
+    margin-top: 48px;
+}
+
+.sectionTitle {
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-display);
+}
+
+.sectionTitle i {
+    color: var(--cyan);
+    font-size: 18px;
+}
+
+/* ========== About ========== */
+.aboutCard {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+}
+
+.aboutText {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--text);
+    white-space: pre-line;
+    margin-bottom: 32px;
+}
+
+.aboutMeta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+}
+
+.metaItem {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.metaItem i {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: rgba(6, 182, 212, 0.1);
+    color: var(--cyan);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+/* ========== Portfolio ========== */
+.portfolioGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.portfolioItem {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    cursor: pointer;
+    border: 1px solid var(--border);
+}
+
+.portfolioItem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.portfolioItem:hover img {
+    transform: scale(1.08);
+}
+
+.portfolioOverlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 16px;
+    background: linear-gradient(transparent, rgba(10, 14, 26, 0.9));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.portfolioItem:hover .portfolioOverlay {
+    opacity: 1;
+}
+
+.portfolioOverlay span {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.uploadBtn {
+    border-radius: 14px;
+    aspect-ratio: 4/3;
+    border: 2px dashed var(--border);
+    background: rgba(6, 182, 212, 0.04);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    color: var(--muted);
+}
+
+.uploadBtn i {
+    font-size: 28px;
+    color: var(--cyan);
+    opacity: 0.6;
+    transition: opacity 0.25s ease;
+}
+
+.uploadBtn span {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.uploadBtn:hover {
+    border-color: var(--cyan);
+    background: rgba(6, 182, 212, 0.08);
+    color: var(--text);
+    transform: translateY(-2px);
+}
+
+.uploadBtn:hover i {
+    opacity: 1;
+}
+
+/* ========== Details ========== */
+.detailsGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.detailsCard {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+}
+
+.detailsCardTitle {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text);
+}
+
+.detailsCardTitle i {
+    color: var(--cyan);
+}
+
+.brandsTitle {
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+}
+
+.hoursList {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.hoursRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(30, 45, 69, 0.4);
+}
+
+.hoursRow:last-child {
+    border-bottom: none;
+}
+
+.dayName {
+    font-size: 14px;
+    color: var(--text);
+    font-weight: 500;
+}
+
+.hoursValue {
+    font-size: 14px;
+    color: var(--cyan);
+    font-weight: 600;
+}
+
+.hoursRow.closed .dayName {
+    color: var(--muted);
+}
+
+.hoursRow.closed .hoursValue {
+    color: var(--red);
+    font-weight: 700;
+}
+
+.tagList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.deviceTag {
+    background: rgba(6, 182, 212, 0.1);
+    color: var(--cyan);
+    border: 1px solid rgba(6, 182, 212, 0.2);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.brandTag {
+    background: rgba(245, 158, 11, 0.08);
+    color: var(--amber);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* ========== Location ========== */
+.locationCard {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.locationHeader {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 28px;
+}
+
+.locationHeader i {
+    color: var(--cyan);
+    font-size: 20px;
+    margin-top: 2px;
+}
+
+.locationHeader h4 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.locationHeader p {
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.mapPlaceholder {
+    background: rgba(30, 41, 59, 0.5);
+    height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid var(--border);
+}
+
+.mapBtn {
+    background: var(--cyan);
+    color: var(--bg);
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: all 0.2s;
+    box-shadow: 0 4px 16px rgba(6, 182, 212, 0.3);
+}
+
+.mapBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(6, 182, 212, 0.4);
+}
+
+/* ========== Reviews ========== */
+.ratingSummary {
+    display: flex;
+    gap: 40px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 24px;
+    align-items: center;
+}
+
+.ratingBig {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    min-width: 140px;
+}
+
+.ratingNumber {
+    font-size: 52px;
+    font-weight: 900;
+    font-family: var(--font-display);
+    line-height: 1;
+}
+
+.ratingStarsBig {
+    display: flex;
+    gap: 4px;
+}
+
+.ratingStarsBig .activeStar {
+    font-size: 16px;
+}
+
+.totalReviews {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.ratingBars {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.barRow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.barLabel {
+    font-size: 13px;
+    color: var(--muted);
+    min-width: 36px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.barLabel i {
+    font-size: 10px;
+    color: var(--amber);
+}
+
+.barTrack {
+    flex: 1;
+    height: 8px;
+    background: rgba(30, 41, 59, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.barFill {
+    height: 100%;
+    background: var(--cyan);
+    border-radius: 10px;
+    transition: width 0.6s ease;
+}
+
+.barCount {
+    font-size: 13px;
+    color: var(--muted);
+    min-width: 28px;
+    text-align: right;
+}
+
+.reviewsList {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.reviewCard {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    transition: all 0.2s;
+}
+
+.reviewCard:hover {
+    border-color: var(--dim);
+    transform: translateY(-2px);
+}
+
+.reviewHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+.reviewerInfo {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.reviewerAvatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--surface);
+    border: 1px solid var(--border);
+}
+
+.reviewerAvatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.reviewerNameRow {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.reviewerNameRow h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.reviewStars {
+    display: flex;
+    gap: 2px;
+}
+
+.reviewStars i {
+    font-size: 10px;
+}
+
+.reviewDate {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.reviewText {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--muted);
+}
+
+.loadingReviews {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 40px;
+    color: var(--muted);
+}
+
+.loadingReviews i {
+    font-size: 24px;
+    color: var(--cyan);
+}
+
+.reviewText {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text);
+    margin-bottom: 16px;
+}
+
+.repairTag {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--cyan);
+    background: rgba(6, 182, 212, 0.08);
+    border: 1px solid rgba(6, 182, 212, 0.2);
+    padding: 4px 12px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 768px) {
+    .headerInner {
+        flex-direction: column;
+    }
+
+    .headerActions {
+        width: 100%;
+        padding-bottom: 16px;
+    }
+
+    .btnSave,
+    .btnRequest {
+        flex: 1;
+        justify-content: center;
+    }
+
+    .portfolioGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .detailsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .ratingSummary {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .ratingBig {
+        padding-bottom: 24px;
+        border-bottom: 1px solid var(--border);
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolioGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .nameRow {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}

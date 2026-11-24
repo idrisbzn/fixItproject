@@ -1,0 +1,31 @@
+.tabsContainer {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 32px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+}
+
+.tabBtn {
+    background: rgba(30, 41, 59, 0.4);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.tabBtn:hover {
+    border-color: var(--dim);
+    color: var(--text);
+}
+
+.tabBtn.active {
+    background: var(--cyan);
+    color: var(--bg);
+    border-color: var(--cyan);
+}

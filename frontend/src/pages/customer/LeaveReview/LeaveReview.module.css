@@ -1,0 +1,311 @@
+.pageContainer {
+    width: 100%;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.backLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--muted);
+    font-size: 14px;
+    text-decoration: none;
+    margin-bottom: 24px;
+    transition: color 0.2s;
+    background-color: transparent;
+}
+
+.backLink:hover {
+    color: var(--text);
+}
+
+.statusBanner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    /* subtle green border */
+    border-radius: 100px;
+    /* pill shape */
+    padding: 12px 24px;
+    margin-bottom: 40px;
+}
+
+.statusLeft {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.statusBadge {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--green);
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.statusDevice {
+    font-size: 13px;
+    color: var(--text);
+}
+
+.statusShop {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.statusRight {
+    font-size: 13px;
+    color: var(--muted);
+    font-style: italic;
+}
+
+.formContainer {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-card);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pageTitle {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.pageSubtitle {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.shopCard {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--card);
+    border-radius: var(--radius-card);
+    padding: 16px 24px;
+    width: 100%;
+    margin-bottom: 32px;
+}
+
+.shopAvatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.shopDetails {
+    display: flex;
+    flex-direction: column;
+}
+
+.shopName {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.shopMeta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.shopMeta i.fa-location-dot {
+    color: var(--red);
+}
+
+.shopMeta i.fa-star {
+    color: var(--amber);
+}
+
+.starRating {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
+.starBtn {
+    background: transparent;
+    border: none;
+    font-size: 32px;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.starBtn:hover,
+.starBtn.active {
+    color: var(--amber);
+    transform: scale(1.1);
+}
+
+.reviewSection {
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+.reviewLabel {
+    display: block;
+    font-size: 14px;
+    color: var(--text);
+    margin-bottom: 12px;
+}
+
+.textareaWrapper {
+    position: relative;
+}
+
+.formTextarea {
+    width: 100%;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-input);
+    padding: 16px;
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 15px;
+    min-height: 120px;
+    resize: vertical;
+    transition: border-color 0.2s;
+}
+
+.formTextarea:focus {
+    border-color: var(--cyan);
+    outline: none;
+}
+
+.charCount {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.deviceInfoRow {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
+.deviceLabel {
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.devicePill {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 100px;
+    padding: 6px 16px;
+    font-size: 13px;
+    color: var(--text);
+}
+
+.devicePill i {
+    color: var(--cyan);
+}
+
+.submitBtn {
+    width: 100%;
+    background: var(--cyan);
+    color: var(--bg);
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 700;
+    padding: 16px;
+    border-radius: var(--radius-btn);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 24px;
+    transition: all 0.2s;
+}
+
+.submitBtn:hover {
+    background: #08c8ea;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3);
+}
+
+.submitBtnSuccess {
+    background: #10b981 !important;
+    box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4) !important;
+    transform: none !important;
+    cursor: default;
+}
+
+.submitBtnSuccess i {
+    animation: checkPop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes checkPop {
+    from {
+        transform: scale(0) rotate(-20deg);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+.footerNote {
+    font-size: 10px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+@media (max-width: 600px) {
+    .statusBanner {
+        flex-direction: column;
+        align-items: flex-start;
+        border-radius: var(--radius-card);
+        gap: 12px;
+    }
+
+    .statusLeft {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.loadingState {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    color: var(--muted);
+    gap: 16px;
+}
+
+.loadingState i {
+    font-size: 32px;
+    color: var(--cyan);
+}

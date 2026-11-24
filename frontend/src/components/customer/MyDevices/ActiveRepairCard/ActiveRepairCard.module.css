@@ -1,0 +1,165 @@
+.repairCard {
+    background: rgba(30, 41, 59, 0.3);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 20px;
+}
+
+.repairCardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.deviceInfo h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.shopName {
+    font-size: 13px;
+    color: var(--cyan);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.statusBadge {
+    font-size: 10px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+}
+
+.statusBadge.active {
+    background: rgba(37, 99, 235, 0.1);
+    color: var(--blue);
+}
+
+.statusBadge.ready {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--green);
+}
+
+.orderId {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.repairStepper {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 24px;
+}
+
+.stepperLine {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--border);
+    z-index: 0;
+}
+
+.stepperLineFill {
+    height: 100%;
+    background: var(--cyan);
+    box-shadow: 0 0 10px var(--cyan);
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    z-index: 1;
+}
+
+.stepIcon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 2px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: var(--muted);
+    transition: all 0.3s ease;
+}
+
+.step.completed .stepIcon {
+    background: var(--cyan);
+    border-color: var(--cyan);
+    color: var(--bg);
+}
+
+.step.current .stepIcon {
+    border-color: var(--cyan);
+    color: var(--cyan);
+    background: var(--bg);
+    transform: scale(1.1);
+}
+
+.step span {
+    font-size: 9px;
+    font-weight: 700;
+    color: var(--muted);
+}
+
+.step.completed span {
+    color: var(--cyan);
+}
+
+.techNoteBox {
+    background: rgba(30, 41, 59, 0.5);
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    gap: 16px;
+}
+
+.techNoteBox i {
+    color: var(--cyan);
+    font-size: 18px;
+}
+
+.techNoteContent label {
+    font-size: 10px;
+    font-weight: 800;
+    color: var(--muted);
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+    display: block;
+}
+
+.techNoteContent p {
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+    .repairStepper {
+        overflow-x: auto;
+        padding-bottom: 8px;
+        justify-content: flex-start;
+        gap: 24px;
+    }
+
+    .step {
+        min-width: 60px;
+    }
+
+    .stepperLine {
+        width: 400px;
+    }
+}

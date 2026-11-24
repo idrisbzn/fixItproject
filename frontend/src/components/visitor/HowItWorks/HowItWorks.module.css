@@ -1,0 +1,92 @@
+/* ========== How It Works ========== */
+.howSection {
+    padding: var(--section-padding-top) 24px 0;
+    margin-top: var(--section-gap);
+    max-width: var(--page-max-width);
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.howSectionTitle {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 36px;
+    color: var(--text);
+    margin-bottom: 12px;
+}
+
+.howSectionSubtitle {
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: 15px;
+    color: var(--muted);
+    max-width: 520px;
+    margin: 0 auto 48px;
+}
+
+.howGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.howCard {
+    text-align: center;
+}
+
+.howStepCircle {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 2px solid var(--cyan);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 20px;
+    color: var(--cyan);
+    background: rgba(6, 182, 212, 0.08);
+    box-shadow: 0 0 24px rgba(6, 182, 212, 0.15);
+    transition: all 0.3s ease;
+}
+
+.howCard:hover .howStepCircle {
+    background: rgba(6, 182, 212, 0.15);
+    box-shadow: 0 0 32px rgba(6, 182, 212, 0.25);
+    transform: scale(1.08);
+}
+
+.howCardTitle {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--text);
+    margin-bottom: 8px;
+}
+
+.howCardDesc {
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .howGrid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        max-width: 360px;
+    }
+}
+
+@media (max-width: 600px) {
+    .howSectionTitle {
+        font-size: 28px;
+    }
+}
